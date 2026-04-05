@@ -11,13 +11,12 @@ public:
                 slargest=largest;
                 largest=nums[i];
             }
-           
             else if(nums[i]>slargest && nums[i]<largest)
             {
                 slargest=nums[i];
             }
         }
-        
         return slargest;
     }
 };
+
