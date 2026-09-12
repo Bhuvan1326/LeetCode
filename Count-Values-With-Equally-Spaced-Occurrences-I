@@ -20,7 +20,6 @@ public:
                 else if(count ==3) third=j;
                 }
             }
-      
             if(count==3 && second-first==third-second) count1++;
         }
         return count1;
