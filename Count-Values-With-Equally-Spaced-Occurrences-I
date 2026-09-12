@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int countSpecialIntegers(vector<int>& nums) {
+        int n=nums.size(); 
+        int count1=0;
+        int first,second,third;
+        bool visit[101]={};
+        for(int i=0;i<n;i++)
+        {
+            if(visit[nums[i]]) continue;
+            visit[nums[i]]=true;
+            int count=0;
+            for(int j=0;j<n;j++)
+            {
+                if(nums[i]==nums[j]) 
+                {
+                count++;
+                if(count==1)first=j;                    
+                else if(count==2) second=j;
+                else if(count ==3) third=j;
+                }
+            }
+      
+            if(count==3 && second-first==third-second) count1++;
+        }
+        return count1;
+    }
+};
