@@ -24,4 +24,4 @@ public:
     long long countIntersectingIntervals(vector<vector<int>>& intervals) {
         return sol(intervals);
     }
-};©leetcode
+};
