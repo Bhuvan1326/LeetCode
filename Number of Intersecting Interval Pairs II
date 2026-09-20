@@ -1,0 +1,27 @@
+long long sol(vector<vector<int>>&intervals)
+{
+    sort(intervals.begin(),intervals.end());
+    vector<int> a;
+    int n=intervals.size();
+    for(auto& interval : intervals)
+        {
+            a.push_back(interval[1]);
+        }
+    sort(a.begin(),a.end());
+    long long res=0;
+    for(int i=0;i<n;i++)
+    {
+        int start=intervals[i][0];
+        int ans=lower_bound(a.begin(),a.end(),start) - a.begin();
+        res+=ans;
+    }
+    long long total=1LL * n* (n-1)/2;
+    return total-res;
+}
+
+class Solution {
+public:
+    long long countIntersectingIntervals(vector<vector<int>>& intervals) {
+        return sol(intervals);
+    }
+};©leetcode
